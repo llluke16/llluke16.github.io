@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navHeadings.forEach(heading => {
         heading.addEventListener('mouseover', function () {
-            this.style.color = '#FF5733'; // Change color on hover
+            this.style.color = '#9290C3'; // Change color on hover
         });
 
         heading.addEventListener('mouseout', function () {
