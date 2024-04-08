@@ -1,14 +1,37 @@
+:root {
+    --gradient: linear-gradient(
+        120deg,
+        #000000,
+        #fff
+    );
+}
+
+html {
+    height: 100%;
+    background: var(--gradient);
+    background-position: center;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    animation: bg_animation 15s infinite alternate;
+}
+
+@keyframes bg_animation {
+    0% {background-position: left}
+    100%{background-position: right;}
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     text-align: center;
-    padding: 5px;
+    padding: 0px;
 }
 
 .header-content {
@@ -19,7 +42,7 @@ header {
 }
 
 nav {
-    background-color: #444;
+    background-color: #161616;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -42,16 +65,19 @@ nav a {
     font-weight: bold;
 }
 
-section {
-    padding: 20px;
-}
+
 
 footer {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 0px;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+header, footer, nav {
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the last value (0.7) to control the opacity */
+    color: #fff; /* Text color for better visibility */
 }
