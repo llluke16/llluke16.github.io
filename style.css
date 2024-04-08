@@ -53,6 +53,13 @@ header {
     transform: translateX(-50%); /* Center the element properly */
 }
 
+@media screen and (max-width: 600px) {
+    header {
+        height: auto; /* Allow header height to adjust based on content */
+        padding: 10px; /* Add padding to header */
+    }
+}
+
 nav {
     color: #fff;
     padding: 20px;
