@@ -93,3 +93,19 @@ header, footer {
     background-color: rgba(0, 0, 0, 0.7); 
     color: #fff; 
 } 
+
+@media screen and (max-width: 600px) {
+    .header-content {
+        flex-direction: column; /* Stack header content vertically */
+        align-items: center; /* Center-align items horizontally */
+    }
+
+    .header-content h1,
+    .header-content h2 {
+        text-align: center; /* Center-align text horizontally */
+    }
+
+    nav {
+        margin-top: 20px; /* Add space between h2 and nav */
+    }
+}
