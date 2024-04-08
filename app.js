@@ -15,4 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
             this.style.color = ''; // Reset color on mouseout
         });
     });
+
+    //Adjust content for screen size
+    if (window.innerWidth <= 600) {
+        // Get the height of the h1 element
+        const h1Height = document.querySelector('.header-content h1').offsetHeight;
+        
+        // Get the height of the navigation bar
+        const navHeight = document.querySelector('nav').offsetHeight;
+        
+        // Calculate the total height needed for the header content
+        const totalHeight = h1Height + navHeight;
+
+        // Set the height of the .header-content dynamically
+        document.querySelector('.header-content').style.height = totalHeight + 'px';
+    }
 });
