@@ -20,12 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 600) {
         // Get the height of the h1 element
         const h1Height = document.querySelector('.header-content h1').offsetHeight;
+        const h2Height = document.querySelector('.header-content h2').offsetHeight;
         
         // Get the height of the navigation bar
         const navHeight = document.querySelector('nav').offsetHeight;
         
         // Calculate the total height needed for the header content
-        const totalHeight = h1Height + navHeight;
+        const totalHeight = h1Height + h2Height + navHeight;
 
         // Set the height of the .header-content dynamically
         document.querySelector('.header-content').style.height = totalHeight + 'px';
