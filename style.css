@@ -35,28 +35,28 @@ header {
 }
 
 .header-content {
-    position: relative;
+    position: relative; /* Ensure relative positioning */
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
 }
 
-.header-content h1 {
+.header-content h1,
+.header-content h2 {
     margin: 0; /* Remove default margin */
 }
 
 .header-content h2 {
-    margin: 0; /* Remove default margin */
     position: absolute; /* Position the h2 element absolutely */
+    top: 50%; /* Move the element to the vertical center */
     left: 50%; /* Move the element to the horizontal center */
-    transform: translateX(-50%); /* Center the element properly */
+    transform: translate(-50%, -50%); /* Center the element properly */
 }
 
 nav {
-    margin-top: 20px; /* Add space between h2 and nav */
     color: #fff;
-    padding: 0px;
+    padding: 20px;
     position: absolute; /* Position the navigation bar absolutely */
     top: 0; /* Align the navigation bar to the top of the header */
     right: 20px; /* Align the navigation bar to the right of the header */
@@ -94,18 +94,17 @@ header, footer {
     color: #fff; 
 } 
 
+/* For smaller screen sizes */
 @media screen and (max-width: 600px) {
     .header-content {
         flex-direction: column; /* Stack header content vertically */
-        align-items: center; /* Center-align items horizontally */
-    }
-
-    .header-content h1,
-    .header-content h2 {
-        text-align: center; /* Center-align text horizontally */
     }
 
     nav {
-        margin-top: 20px; /* Add space between h2 and nav */
+        margin-top: 40px; /* Add space between headings and nav */
+    }
+
+    nav a {
+        margin-right: 20px; /* Add space between navigation links */
     }
 }

@@ -15,20 +15,33 @@ document.addEventListener("DOMContentLoaded", function () {
             this.style.color = ''; // Reset color on mouseout
         });
     });
-
-    //Adjust content for screen size
-    if (window.innerWidth <= 600) {
-        // Get the height of the h1 element
+    // Adjust header content positioning for smaller screens
+    function adjustHeader() {
+        const headerContent = document.querySelector('.header-content');
         const h1Height = document.querySelector('.header-content h1').offsetHeight;
-        const h2Height = document.querySelector('.header-content h2').offsetHeight;
-        
-        // Get the height of the navigation bar
-        const navHeight = document.querySelector('nav').offsetHeight;
-        
-        // Calculate the total height needed for the header content
-        const totalHeight = h1Height + h2Height + navHeight;
+        const nav = document.querySelector('nav');
+        const h2 = document.querySelector('.header-content h2');
 
-        // Set the height of the .header-content dynamically
-        document.querySelector('.header-content').style.height = totalHeight + 'px';
+        if (window.innerWidth <= 600) {
+            // Stack h2 between h1 and nav bar
+            headerContent.style.flexDirection = 'column';
+            h2.style.position = 'static'; // Reset h2 position
+            headerContent.insertBefore(h2, nav);
+            nav.style.marginTop = '40px'; // Add space between nav and h2
+            nav.style.padding = '20px'; // Add padding to nav
+        } else {
+            // Ensure h2 is centered horizontally
+            headerContent.style.flexDirection = 'row';
+            h2.style.position = 'absolute'; // Position h2 absolutely
+            h2.style.top = '50%'; // Move h2 to the vertical center
+            h2.style.left = '50%'; // Move h2 to the horizontal center
+            h2.style.transform = 'translate(-50%, -50%)'; // Center h2 properly
+            nav.style.marginTop = '20px'; // Adjust margin top of nav
+            nav.style.padding = '20px'; // Add padding to nav
+        }
     }
+
+    // Call adjustHeader function initially and on window resize
+    adjustHeader();
+    window.addEventListener('resize', adjustHeader);
 });
