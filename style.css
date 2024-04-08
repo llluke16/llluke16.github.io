@@ -54,8 +54,9 @@ header {
 }
 
 nav {
+    margin-top: 20px; /* Add space between h2 and nav */
     color: #fff;
-    padding: 20px;
+    padding: 0px;
     position: absolute; /* Position the navigation bar absolutely */
     top: 0; /* Align the navigation bar to the top of the header */
     right: 20px; /* Align the navigation bar to the right of the header */
